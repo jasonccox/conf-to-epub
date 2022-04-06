@@ -77,15 +77,17 @@ for talk_path in $talk_paths; do
 
     curl --silent --location "$url?lang=$language" > "$html_file"
     title="$(htmlq --filename "$html_file" --text ".body h1")"
-    author="$(htmlq --filename "$html_file" --text ".body .author-name" | sed 's/By *//')"
-    author_role="$(htmlq --filename "$html_file" --text ".body .author-role")"
+    subtitle="$(htmlq --filename "$html_file" --text ".body .subtitle")"
+    author="$(htmlq --filename "$html_file" --text ".body .byline p:first-of-type" | sed 's/By *//')"
+    author_with_role="$(htmlq --filename "$html_file" --text ".body .byline")"
     summary="$(htmlq --filename "$html_file" --text ".body .kicker")"
 
+    [ -n "$subtitle" ] && title="$title $subtitle"
+    [ -z "$author" ] && author="$author_with_role"
     [ -n "$author" ] && title="$title ($author)"
-    [ -n "$author_role" ] && author="$author, $author_role"
 
     echo "<h1>$title</h1>" >"$stage_file"
-    [ -n "$author" ] && echo "<p><em>$author</em></p>" >>"$stage_file"
+    [ -n "$author_with_role" ] && echo "<p><em>$author_with_role</em></p>" >>"$stage_file"
     [ -n "$summary" ] && echo "<p><em>$summary</em><p>" >>"$stage_file"
 
     # only include body for talks, not sessions
