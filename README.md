@@ -1,5 +1,7 @@
 # LDS General Conference for e-readers
 
+**[jasoncarloscox.com/creations/conf-to-epub](https://jasoncarloscox.com/creations/conf-to-epub/)**
+
 A script to convert LDS General Conference to EPUB, as well as converted files for past conferences.
 
 These are pretty basic EPUBs -- the footnotes are removed, images may not show up right, and links aren't guaranteed to work -- but if you just want a table of contents and the text of each talk, they should be good enough.
