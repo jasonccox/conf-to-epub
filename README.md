@@ -26,6 +26,8 @@ The Bash script depends on [curl](https://curl.sh), [htmlq](https://github.com/m
 - `<month>` is one of `april`, `apr`, `4`, `04`, `october`, `oct`, `10` (case-insensitive)
 - `<language>` (optional) is the argument to the `lang` query parameter on the `churchofjesuschrist.org` URLs and defaults to `eng`
 
-## I want to get in touch
+## I need help / I want to contribute
 
-If you have questions, suggestions, etc., you can open a GitHub issue or contact me at [hi@jasoncarloscox.com](mailto:hi@jasoncarloscox.com).
+Contributions are welcome! You can send questions, bug reports, patches, etc. by email to [~jcc/public-inbox@lists.sr.ht](https://lists.sr.ht/~jcc/public-inbox). (Don't know how to contribute via email? Check out the interactive tutorial at [git-send-email.io](https://git-send-email.io), or [email me](mailto:me@jasoncarloscox.com) for help.)
+
+GitHub issues and pull requests are fine, too.
