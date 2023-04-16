@@ -114,7 +114,7 @@ dir="conferences/$year/$month"
 mkdir -p "$dir"
 
 pandoc \
-    --epub-chapter-level 1 \
+    --split-level 1 \
     --toc --toc-depth 1 \
     -o "$dir/general-conference-$year-$month-$language.epub" \
     $build_files
