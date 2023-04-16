@@ -75,7 +75,7 @@ for talk_path in $talk_paths; do
     html_file="$build_dir/$name-raw.html"
     stage_file="$build_dir/$name-stage.html"
 
-    curl --silent --location "$url?lang=$language" > "$html_file"
+    curl --silent --location "$url" > "$html_file"
     title="$(htmlq --filename "$html_file" --text ".body h1")"
     subtitle="$(htmlq --filename "$html_file" --text ".body .subtitle")"
     author="$(htmlq --filename "$html_file" --text ".body .byline p:first-of-type" | sed 's/By *//')"
