@@ -8,7 +8,7 @@ These are pretty basic EPUBs -- the footnotes are removed, images may not show u
 
 ## Gimme the files
 
-If you just want to download the files for your e-reader, check out the `conferences/` directory. Currently `.epub` and `.mobi` files are provided, as those are what my wife and I need for our e-readers.
+If you just want to download the files for your e-reader, check out the `conferences/` directory. Currently only `.epub` files are provided, as those are what my wife and I need for our e-readers.
 
 If the format you need isn't there, try using a tool like [Calibre](https://calibre-ebook.com/) (desktop application that also ships with the `ebook-convert` CLI) or [Cloud Convert](https://cloudconvert.com/epub-converter) (online converter) to convert the `.epub` file to the format you need.
 
