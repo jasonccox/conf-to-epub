@@ -98,10 +98,12 @@ for talk_path in $talk_paths; do
     # building the epub from markdown works much better than HTML, so convert to
     # markdown, removing footnotes and adding the hostname to link URLs
     talk_file="$build_dir/$name.md"
-    pandoc -f html -t commonmark -o - "$stage_file" | \
+    pandoc -f html -t commonmark --wrap none -o - "$stage_file" | \
         sed \
         -e 's#\[<sup>[0-9]\+</sup>\]([^)]*)##g' \
+        -e 's#<a [^>]*><sup>[0-9]\+</sup></a>##g' \
         -e "s#\](/#]($base_url/#g" \
+        -e "s#href=\"/#href=\"$base_url/#g" \
         >"$talk_file"
     build_files="$build_files $talk_file"
 done
