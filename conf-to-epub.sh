@@ -114,9 +114,19 @@ echo Converting to epub
 
 dir="conferences/$year/$month"
 mkdir -p "$dir"
+file_base="$dir/general-conference-$year-$month-$language"
 
 pandoc \
     --split-level 1 \
     --toc --toc-depth 1 \
-    -o "$dir/general-conference-$year-$month-$language.epub" \
+    -o "$file_base.epub" \
     $build_files
+
+### CONVERT TO AZW3 ###
+
+if command -v ebook-convert >/dev/null 2>&1; then
+    echo Converting to azw3
+    ebook-convert "$file_base.epub" "$file_base.azw3"
+else
+    echo Skipping convertion to azw3 because ebook-convert command not found
+fi

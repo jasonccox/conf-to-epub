@@ -8,15 +8,15 @@ These are pretty basic EPUBs -- the footnotes are removed, images may not show u
 
 ## Gimme the files
 
-If you just want to download the files for your e-reader, check out the `conferences/` directory. Currently only `.epub` files are provided, as those are what my wife and I need for our e-readers.
+If you just want to download the files for your e-reader, check out the `conferences/` directory. Currently `.epub` and `.azw3` (`.mobi` for older conferences) files are provided.
 
-If the format you need isn't there, try using a tool like [Calibre](https://calibre-ebook.com/) (desktop application that also ships with the `ebook-convert` CLI) or [Cloud Convert](https://cloudconvert.com/epub-converter) (online converter) to convert the `.epub` file to the format you need.
+If the format you need isn't there, try using a tool like [Calibre](https://calibre-ebook.com/) (desktop application that also ships with the `ebook-convert` CLI) or [Cloud Convert](https://cloudconvert.com/epub-converter) (online converter) to convert the `.epub` file to the format you need. Sometimes converting can also solve issues with specific e-readers not liking the provided `.epub` files (e.g., see [issue #2](https://github.com/jasonccox/conf-to-epub/issues/2)).
 
 ## I want to use the script
 
 ### Requirements
 
-The Bash script depends on [curl](https://curl.sh), [htmlq](https://github.com/mgdm/htmlq) and [pandoc](https://pandoc.org).
+The Bash script depends on [curl](https://curl.sh), [htmlq](https://github.com/mgdm/htmlq) and [pandoc](https://pandoc.org). Optionally, if [ebook-convert](https://manual.calibre-ebook.com/generated/en/ebook-convert.html) is available, files will be converted to `.azw3` as well.
 
 ### Usage
 
