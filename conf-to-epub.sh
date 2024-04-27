@@ -122,11 +122,13 @@ pandoc \
     -o "$file_base.epub" \
     $build_files
 
-### CONVERT TO AZW3 ###
+### CONVERT TO AZW3 AND BACK ###
 
 if command -v ebook-convert >/dev/null 2>&1; then
-    echo Converting to azw3
+    echo Converting to azw3 and back
     ebook-convert "$file_base.epub" "$file_base.azw3"
+    ebook-convert "$file_base.azw3" "$file_base.converted.epub"
+    rm -f "$file_base.azw3"
 else
-    echo Skipping convertion to azw3 because ebook-convert command not found
+    echo Skipping convertion to azw3 and back because ebook-convert command not found
 fi
