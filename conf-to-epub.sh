@@ -124,10 +124,17 @@ pandoc \
 
 ### CONVERT TO AZW3 AND BACK ###
 
+ebook_convert=""
 if command -v ebook-convert >/dev/null 2>&1; then
+    ebook_convert="ebook-convert"
+elif [ -x /Applications/calibre.app/Contents/MacOS/ebook-convert ]; then
+    ebook_convert="/Applications/calibre.app/Contents/MacOS/ebook-convert"
+fi
+
+if [ -n "$ebook_convert" ]; then
     echo Converting to azw3 and back
-    ebook-convert "$file_base.epub" "$file_base.azw3"
-    ebook-convert "$file_base.azw3" "$file_base.converted.epub"
+    "$ebook_convert" "$file_base.epub" "$file_base.azw3"
+    "$ebook_convert" "$file_base.azw3" "$file_base.converted.epub"
     rm -f "$file_base.azw3"
 else
     echo Skipping convertion to azw3 and back because ebook-convert command not found
