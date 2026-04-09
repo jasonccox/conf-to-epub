@@ -1,0 +1,10 @@
+body, html, div, p, section, article, blockquote, span {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+body {
+  color: #000000;
+  font-family: serif;
+  line-height: 1.6;
+}
