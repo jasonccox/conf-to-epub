@@ -76,9 +76,9 @@ if [ -n "$cover_img_url" ]; then
     if command -v magick >/dev/null 2>&1; then
         echo Adding text overlay to cover
 
-        magick "$cover_raw" \
+        if ! magick "$cover_raw" \
             -gravity North \
-            -font Helvetica-Bold \
+            -family "Helvetica, Arial, sans-serif" -weight Bold -style Normal \
             -pointsize 170 \
             -stroke white -strokewidth 24 -fill black \
             -annotate +0+30 "$month_name $year" \
@@ -90,13 +90,17 @@ if [ -n "$cover_img_url" ]; then
             -stroke none -fill black \
             -annotate +0+220 "General Conference" \
             -gravity South \
-            -font Helvetica \
+            -family "Helvetica, Arial, sans-serif" -weight Bold -style Normal \
             -pointsize 72 \
             -stroke white -strokewidth 15 -fill black \
             -annotate +0+40 "The Church of Jesus Christ\nof Latter-day Saints" \
             -stroke none -fill black \
             -annotate +0+40 "The Church of Jesus Christ\nof Latter-day Saints" \
             "$cover_file"
+        then
+            echo Skipping text overlay because magick command failed
+            cover_file="$cover_raw"
+        fi
     else
         echo Skipping text overlay because magick command not found
         cover_file="$cover_raw"
