@@ -33,3 +33,5 @@ The Bash script depends on [curl](https://curl.sh), [htmlq](https://github.com/m
 Contributions are welcome! You can send questions, bug reports, patches, etc. by email to [~jcc/public-inbox@lists.sr.ht](https://lists.sr.ht/~jcc/public-inbox). (Don't know how to contribute via email? Check out the interactive tutorial at [git-send-email.io](https://git-send-email.io), or [email me](mailto:me@jasoncarloscox.com) for help.)
 
 GitHub issues and pull requests are fine, too.
+
+No AI-assisted contributions, please.
